@@ -1,28 +1,71 @@
 <template>
-  <div class="galeria">
-    <h2>Galeria de Fotos</h2>
-    <div class="fotos">
-      <img src="../assets/DSCF1016.jpg" alt="Foto 1" />
-      <img src="../assets/IMG_2391.jpg" alt="Foto 2" />
-      <img src="../assets/IMG_2434.jpg" alt="Foto 3" />
-    </div>
+  <div id="app" class="app">
+    <header class="topo">
+      <img src="./assets/brasao.png" alt="Brasão da Turma" class="brasao" />
+      <h1>Livro de Ouro</h1>
+      <h2>Turma Matheus Rodrigues Lopes</h2>
+      <h3>Medicina Turma VI - UNIVASF</h3>
+      <p class="descricao">
+        Este é o nosso Livro de Ouro digital! <br />
+        Contribua com a nossa formatura e tenha seu nome eternizado em nossa página.
+      </p>
+    </header>
+
+    <Galeria />
+    <Rodape />
   </div>
 </template>
 
+<script>
+import Galeria from "./components/Galeria.vue";
+import Rodape from "./components/Rodape.vue";
+
+export default {
+  name: "App",
+  components: {
+    Galeria,
+    Rodape,
+  },
+};
+</script>
+
 <style>
-.galeria {
+.app {
   text-align: center;
-  padding: 20px;
+  font-family: "Helvetica", sans-serif;
+  background-color: #ffffff;
+  color: #004d40;
 }
-.fotos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+
+.topo {
+  padding: 40px 10px;
 }
-.fotos img {
-  width: 250px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+
+.brasao {
+  width: 160px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #00796b;
+  margin-bottom: 3px;
+}
+
+h3 {
+  font-size: 1.3em;
+  color: #009688;
+  margin-bottom: 15px;
+}
+
+.descricao {
+  font-size: 1.1em;
+  line-height: 1.5;
+  color: #333;
 }
 </style>
