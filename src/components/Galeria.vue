@@ -1,30 +1,37 @@
 <template>
-  <section>
-    <h2>Galeria</h2>
-    <div class="galeria">
-      <div class="foto" v-for="n in 3" :key="n">Espaço para foto {{ n }}</div>
+  <section class="galeria">
+    <h2>Galeria de Memórias</h2>
+    <div class="fotos">
+        <img src="../assets/DSCF1016.jpg" alt="Foto 1" />
+      <img src="../assets/IMG_2391.jpg" alt="Foto 2" />
+      <img src="../assets/IMG_2434.jpg" alt="Foto 3" />
+      <!-- adicione mais fotos se quiser -->
     </div>
   </section>
 </template>
 
-<style scoped>
+<style>
 .galeria {
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
   padding: 20px;
+  background-color: #f8f8f8;
 }
 
-.foto {
-  min-width: 300px;
-  height: 200px;
-  background-color: #e0e0e0;
-  border: 2px solid gold;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.galeria h2 {
   color: #004d40;
-  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.fotos {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.fotos img {
+  height: 220px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 </style>
