@@ -5,20 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Livro de Ouro — Medicina Turma VI UNIVASF</title>
 
-    <!-- Fontes elegantes -->
+    <!-- Fontes -->
     <link
       href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
 
     <style>
+      /* ===== ESTILO GERAL ===== */
       body {
         font-family: "Poppins", sans-serif;
-        background: linear-gradient(180deg, #ffffff 0%, #fffaf0 100%);
-        color: #004d40;
-        text-align: center;
         margin: 0;
         padding: 0;
+        color: #004d40;
+        text-align: center;
+
+        /* Fundo com degradê + textura dourada translúcida */
+        background: linear-gradient(180deg, #fffdf5 0%, #fff8e1 100%),
+          url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+        background-blend-mode: multiply;
       }
 
       header {
@@ -37,7 +42,7 @@
         background: linear-gradient(90deg, #d4af37, #b8860b);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
       }
 
       h2 {
@@ -62,11 +67,13 @@
         margin: 0 auto 30px auto;
       }
 
+      /* ===== GALERIA ===== */
       .galeria {
-        background-color: #f8f8f8;
+        background-color: rgba(255, 255, 255, 0.7);
         padding: 30px 10px;
         border-top: 2px solid #e0c068;
         border-bottom: 2px solid #e0c068;
+        backdrop-filter: blur(3px);
       }
 
       .galeria h2 {
@@ -74,4 +81,115 @@
         margin-bottom: 20px;
       }
 
-      .fo
+      .fotos {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      .fotos img {
+        height: 380px;
+        border-radius: 15px;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        transition: transform 0.3s ease;
+      }
+
+      .fotos img:hover {
+        transform: scale(1.05);
+      }
+
+      /* ===== PIX ===== */
+      #pix {
+        text-align: center;
+        margin: 50px auto;
+        max-width: 600px;
+        background: rgba(255, 248, 225, 0.9);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(3px);
+      }
+
+      #pix h2 {
+        color: #b8860b;
+        margin-bottom: 20px;
+      }
+
+      #pix img {
+        width: 220px;
+        height: 220px;
+        border-radius: 10px;
+        border: 2px solid #b8860b;
+      }
+
+      #pix input {
+        font-size: 16px;
+        text-align: center;
+        padding: 10px;
+        width: 80%;
+        border: 1px solid #b8860b;
+        border-radius: 5px;
+        background-color: #fffdf4;
+        color: #333;
+      }
+
+      /* ===== RODAPÉ ===== */
+      footer {
+        padding: 25px;
+        color: #004d40;
+        font-weight: 600;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-top: 1px solid #e0c068;
+        backdrop-filter: blur(3px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img src="src/assets/Bra.jpg" alt="Brasão da Turma" />
+      <h1>Livro de Ouro</h1>
+      <h2>Turma Matheus Rodrigues Lopes</h2>
+      <h3>Medicina Turma VI — UNIVASF</h3>
+      <p>
+        Este é o nosso <strong>Livro de Ouro digital</strong>! <br />
+        Sua participação fará toda diferença para celebrarmos juntos esse momento
+        tão especial. Agradecemos por todos os ensinamentos — todos vocês foram
+        essenciais em nossa formação! 💚
+      </p>
+    </header>
+
+    <section class="galeria">
+      <h2>Nossas Memórias</h2>
+      <div class="fotos">
+        <img src="src/assets/A1.jpg" alt="Foto 1" />
+        <img src="src/assets/A2.jpg" alt="Foto 2" />
+        <img src="src/assets/A3.jpg" alt="Foto 3" />
+      </div>
+    </section>
+
+    <section id="pix">
+      <h2>Contribua com o Baile via PIX</h2>
+      <div style="margin:20px 0;">
+        <img
+          src="assets/qrcode-pix.jpg"
+          alt="QR Code PIX"
+        />
+      </div>
+      <p>Copia e cole este código no seu app de banco:</p>
+      <input
+        type="text"
+        value="00020101021126360014br.gov.bcb.pix0114+55819836668485204000053039865802BR5923BRUNO ROCHA SOUZA SILVA6009SAO PAULO622905251K9WCRW5QCZYNM679EAG8MXQZ6304C390"
+        readonly
+      />
+      <p style="font-size:14px; color:#555; margin-top:15px;">
+        Qualquer contribuição é bem-vinda! 🎉
+      </p>
+    </section>
+
+    <footer>Com carinho, Turma 6 de Medicina — UNIVASF 💚</footer>
+  </body>
+</html>
