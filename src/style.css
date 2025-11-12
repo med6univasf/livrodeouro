@@ -1,22 +1,42 @@
+/* ===== FONTE ===== */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
+
+/* ===== ESTILO GERAL ===== */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #ffffff;
-  color: #333;
-}
-
-h1, h2, h3 {
   color: #004d40;
+  text-align: center;
+
+  /* Fundo degradê + textura sutil */
+  background: linear-gradient(180deg, #fffdf5 0%, #fff8e1 100%),
+    url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  background-blend-mode: multiply;
 }
 
-section {
-  padding: 60px 20px;
-  text-align: center;
+/* ===== HEADER ===== */
+header {
+  padding: 50px 10px;
 }
 
-footer {
-  background-color: #004d40;
-  color: gold;
-  padding: 20px;
-  text-align: center;
+header img {
+  width: 260px; /* brasão maior */
+  max-width: 80%;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+  transition: transform 0.3s ease;
+
+  /* contorno dourado sutil */
+  border: 3px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
+
+header img:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  font-family: 'Alex Brush', cursive;
+  font-size: 5em;
