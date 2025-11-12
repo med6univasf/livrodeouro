@@ -1,12 +1,110 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Med 6 UNIVASF</title>
+    <title>Livro de Ouro — Medicina Turma VI UNIVASF</title>
+    <style>
+      body {
+        font-family: "Helvetica", sans-serif;
+        background-color: #ffffff;
+        color: #004d40;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        padding: 40px 10px;
+      }
+
+      header img {
+        width: 160px;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        font-size: 2.2em;
+        margin-bottom: 5px;
+        color: #00695c;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        color: #00796b;
+        margin-bottom: 3px;
+      }
+
+      h3 {
+        font-size: 1.3em;
+        color: #009688;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 1.1em;
+        line-height: 1.5;
+        color: #333;
+        margin-bottom: 30px;
+      }
+
+      .galeria {
+        background-color: #f8f8f8;
+        padding: 20px;
+      }
+
+      .galeria h2 {
+        color: #004d40;
+        margin-bottom: 15px;
+      }
+
+      .fotos {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      .fotos img {
+        height: 220px;
+        border-radius: 10px;
+        flex-shrink: 0;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      footer {
+        padding: 20px;
+        color: #004d40;
+        font-weight: bold;
+      }
+    </style>
   </head>
+
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <header>
+      <img src="src/assets/Br.jpg" alt="Brasão da Turma" />
+      <h1>Livro de Ouro</h1>
+      <h2>Turma Matheus Rodrigues Lopes</h2>
+      <h3>Medicina Turma VI - UNIVASF</h3>
+      <p>
+        Este é o nosso Livro de Ouro digital! <br />
+        Contribua com a nossa formatura e tenha seu nome eternizado em nossa
+        página.
+      </p>
+    </header>
+
+    <section class="galeria">
+      <h2>Galeria de Memórias</h2>
+      <div class="fotos">
+        <img src="src/assets/A1.jpg" alt="Foto 1" />
+        <img src="src/assets/A2.jpg" alt="Foto 2" />
+        <img src="src/assets/A3.jpg" alt="Foto 3" />
+      </div>
+    </section>
+
+    <footer>
+      Com carinho, Turma 6 de Medicina — UNIVASF 💚
+    </footer>
   </body>
 </html>
