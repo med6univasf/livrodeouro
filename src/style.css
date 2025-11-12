@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #004d40;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+footer {
+  background-color: #004d40;
+  color: gold;
+  padding: 20px;
+  text-align: center;
+}
