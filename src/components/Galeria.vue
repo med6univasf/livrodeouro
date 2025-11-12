@@ -1,6 +1,6 @@
 <template>
   <section class="galeria">
-    <h2>Galeria de Memórias</h2>
+    
     <div class="fotos">
         <img src="../assets/A1.jpg" alt="Foto 1" />
       <img src="../assets/A2.jpg" alt="Foto 2" />
