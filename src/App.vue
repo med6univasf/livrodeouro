@@ -1,19 +1,28 @@
 <template>
-  <div>
-    <Navbar />
-    <section>
-      <h1>Livro de Ouro — Medicina Turma 6 UNIVASF</h1>
-      <p>Espaço reservado para mensagem inicial e foto da turma 💚</p>
-    </section>
-
-    <Galeria />
-
-    <Rodape />
+  <div class="galeria">
+    <h2>Galeria de Fotos</h2>
+    <div class="fotos">
+      <img src="../assets/DSCF1016.jpg" alt="Foto 1" />
+      <img src="../assets/IMG_2391.jpg" alt="Foto 2" />
+      <img src="../assets/IMG_2434.jpg" alt="Foto 3" />
+    </div>
   </div>
 </template>
 
-<script setup>
-import Navbar from './components/Navbar.vue'
-import Galeria from './components/Galeria.vue'
-import Rodape from './components/Rodape.vue'
-</script>
+<style>
+.galeria {
+  text-align: center;
+  padding: 20px;
+}
+.fotos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.fotos img {
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+</style>
