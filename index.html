@@ -95,12 +95,15 @@
         padding: 10px;
       }
 
-      .fotos img {
-        height: 380px;
-        border-radius: 15px;
-        flex-shrink: 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-        transition: transform 0.3s ease;
+     .fotos img {
+  height: auto;           /* mantém proporção original da imagem */
+  max-height: 300px;      /* limita a altura máxima */
+  width: auto;            /* mantém proporção horizontal */
+  max-width: 90%;         /* nunca ultrapassa 90% da tela em mobiles */
+  border-radius: 15px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
       }
 
       .fotos img:hover {
