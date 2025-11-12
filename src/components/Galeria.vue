@@ -2,9 +2,9 @@
   <section class="galeria">
     <h2>Galeria de Memórias</h2>
     <div class="fotos">
-        <img src="../assets/DSCF1016.jpg" alt="Foto 1" />
-      <img src="../assets/IMG_2391.jpg" alt="Foto 2" />
-      <img src="../assets/IMG_2434.jpg" alt="Foto 3" />
+        <img src="../assets/A1.jpg" alt="Foto 1" />
+      <img src="../assets/A2.jpg" alt="Foto 2" />
+      <img src="../assets/A3.jpg" alt="Foto 3" />
       <!-- adicione mais fotos se quiser -->
     </div>
   </section>
