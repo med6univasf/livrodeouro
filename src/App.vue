@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="app">
     <header class="topo">
-      <img src="./assets/Bra.jpg" alt="Brasão da Turma" class="brasao" />
+      <img src="./assets/Brasao.png" alt="Brasão da Turma" class="brasao" />
       <h1>Livro de Ouro</h1>
       <h2>Turma Matheus Rodrigues Lopes</h2>
       <h3>Medicina Turma VI - UNIVASF</h3>
