@@ -28,10 +28,25 @@
         padding: 40px 10px;
       }
 
-      /* Brasão pequeno e proporcional */
+      /* Brasão maior sem círculo */
       header img {
-        width: 120px;          /* tamanho fixo menor */
-        max-width: 120px;
+        width: 160px;          /* maior que antes */
+        max-width: 160px;
         height: auto;          /* mantém proporção */
-        margin-bottom: 15px;
-        filter: drop-shadow(0 3px 5px
+        margin-bottom: 20px;
+        filter: drop-shadow(0 3px 5px rgba(0,0,0,0.2));
+        transition: transform 0.3s ease;
+      }
+
+      header img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Título principal */
+      h1 {
+        font-family: "Alex Brush", cursive;
+        font-size: 4em;
+        margin: 10px 0;
+        background: linear-gradient(90deg, #d4af37, #b8860b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transpare
