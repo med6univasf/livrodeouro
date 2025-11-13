@@ -14,40 +14,44 @@
     <style>
       /* ===== ESTILO GERAL ===== */
       body {
-        font-family: "Poppins", sans-serif;
         margin: 0;
-        padding: 0;
+        font-family: "Poppins", sans-serif;
         color: #004d40;
         text-align: center;
-
-        /* Fundo com degradê + textura dourada translúcida */
         background: linear-gradient(180deg, #fffdf5 0%, #fff8e1 100%),
           url("https://www.transparenttextures.com/patterns/paper-fibers.png");
         background-blend-mode: multiply;
       }
 
+      /* ===== HEADER ===== */
       header {
-      header img {
-  width: 25%;         /* ocupa 25% da largura da tela */
-  max-width: 150px;   /* nunca maior que 150px */
-  min-width: 100px;   /* nunca menor que 100px */
-  margin-bottom: 20px;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
-  border: 3px solid rgba(212, 175, 55, 0.3);
-  border-radius: 50%;
-  padding: 8px;
-  background-color: rgba(255, 255, 255, 0.8);
-  transition: transform 0.3s ease;
+        padding: 50px 10px;
       }
-}
 
-header img:hover {
-  transform: scale(1.05);
-}
+      /* Brasão proporcional */
+      header img {
+        width: 25%;
+        max-width: 150px;
+        min-width: 100px;
+        max-height: 150px;
+        margin-bottom: 20px;
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+        border: 3px solid rgba(212, 175, 55, 0.3);
+        border-radius: 50%;
+        padding: 8px;
+        background-color: rgba(255, 255, 255, 0.8);
+        transition: transform 0.3s ease;
+      }
 
+      header img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Título principal */
       h1 {
         font-family: "Alex Brush", cursive;
-        font-size: 5em;
+        font-size: 5vw;
+        max-font-size: 80px;
         margin: 10px 0;
         background: linear-gradient(90deg, #d4af37, #b8860b);
         -webkit-background-clip: text;
@@ -55,6 +59,7 @@ header img:hover {
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
       }
 
+      /* Subtítulos */
       h2 {
         font-family: "Playfair Display", serif;
         font-size: 1.8em;
@@ -94,31 +99,28 @@ header img:hover {
       .fotos {
         display: flex;
         overflow-x: auto;
-        gap: 20px;
+        gap: 15px;
         justify-content: center;
         padding: 10px;
+        scroll-behavior: smooth;
       }
 
-    .fotos img {
-  height: auto;          /* mantém proporção */
-  max-height: 200px;     /* altura máxima menor */
-  width: auto;           /* mantém proporção horizontal */
-  max-width: 80%;        /* nunca ultrapassa 80% da tela em mobile */
-  border-radius: 12px;
-  flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease;
-}
-
-.fotos img:hover {
-  transform: scale(1.05);
-}
+      .fotos img {
+        height: auto;
+        max-height: 200px;
+        width: auto;
+        max-width: 80%;
+        border-radius: 12px;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        transition: transform 0.3s ease;
+      }
 
       .fotos img:hover {
         transform: scale(1.05);
       }
 
-      /* ===== PIX ===== */
+      /* ===== SEÇÃO PIX ===== */
       #pix {
         text-align: center;
         margin: 50px auto;
@@ -162,6 +164,26 @@ header img:hover {
         border-top: 1px solid #e0c068;
         backdrop-filter: blur(3px);
       }
+
+      /* ===== MEDIA QUERIES ===== */
+      @media screen and (max-width: 600px) {
+        h1 {
+          font-size: 12vw;
+        }
+        h2 {
+          font-size: 5vw;
+        }
+        h3 {
+          font-size: 4vw;
+        }
+        .fotos img {
+          max-height: 150px;
+        }
+        header img {
+          width: 40%;
+          max-width: 120px;
+        }
+      }
     </style>
   </head>
 
@@ -191,10 +213,7 @@ header img:hover {
     <section id="pix">
       <h2>Contribua com o Baile via PIX</h2>
       <div style="margin:20px 0;">
-        <img
-          src="assets/qrcode-pix.jpg"
-          alt="QR Code PIX"
-        />
+        <img src="assets/qrcode-pix.jpg" alt="QR Code PIX" />
       </div>
       <p>Copia e cole este código no seu app de banco:</p>
       <input
