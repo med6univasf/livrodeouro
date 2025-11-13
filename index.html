@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Livro de Ouro — Medicina Turma VI UNIVASF</title>
 
   <!-- Fontes -->
@@ -24,5 +24,30 @@
       padding: 40px 10px;
     }
 
-    /* Brasão 50% maior */
-    heade
+    /* Brasão proporcional, sem círculo */
+    header img {
+      width: 240px; /* 50% maior */
+      max-width: 90%;
+      height: auto;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 3px 5px rgba(0,0,0,0.2));
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Título principal */
+    h1 {
+      font-family: "Alex Brush", cursive;
+      font-size: 4.8em; /* 20% maior */
+      margin: 10px 0;
+      background: linear-gradient(90deg, #d4af37, #b8860b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      font-family:
