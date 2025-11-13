@@ -19,10 +19,11 @@ header {
   padding: 50px 10px;
 }
 
+/* Brasão responsivo */
 header img {
-  width: 35%;         
-  max-width: 200px;   
-  min-width: 120px;   
+  width: 35%;           /* ocupa 35% da largura da tela */
+  max-width: 200px;     /* nunca maior que 200px */
+  min-width: 120px;     /* nunca menor que 120px */
   margin-bottom: 25px;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
   transition: transform 0.3s ease;
@@ -32,11 +33,22 @@ header img {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-
 header img:hover {
   transform: scale(1.05);
 }
 
+/* Título principal */
 h1 {
   font-family: 'Alex Brush', cursive;
-  font-size: 5em;
+  font-size: 5vw; /* responsivo */
+  max-font-size: 80px; /* opcional limite */
+  margin: 10px 0;
+  background: linear-gradient(90deg, #d4af37, #b8860b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Subtítulos */
+h2 {
+  font-
