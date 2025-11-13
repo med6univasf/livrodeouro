@@ -50,4 +50,160 @@
     }
 
     h2 {
-      font-family:
+      font-family: "Playfair Display", serif;
+      font-size: 1.6em;
+      color: #004d40;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.2em;
+      color: #00796b;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.5;
+      color: #333;
+      max-width: 700px;
+      margin: 0 auto 25px auto;
+    }
+
+    /* ===== GALERIA ===== */
+    .galeria {
+      background-color: rgba(255,255,255,0.7);
+      padding: 25px 10px;
+      border-top: 2px solid #e0c068;
+      border-bottom: 2px solid #e0c068;
+      backdrop-filter: blur(3px);
+    }
+
+    .galeria h2 {
+      color: #b8860b;
+      margin-bottom: 15px;
+    }
+
+    .fotos {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .fotos img {
+      height: auto;
+      max-height: 180px;
+      width: auto;
+      max-width: 70%;
+      border-radius: 12px;
+      flex-shrink: 0;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .fotos img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== PIX ===== */
+    #pix {
+      text-align: center;
+      margin: 40px auto;
+      max-width: 550px;
+      background: rgba(255,248,225,0.9);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      backdrop-filter: blur(3px);
+    }
+
+    #pix h2 {
+      color: #b8860b;
+      margin-bottom: 15px;
+    }
+
+    #pix img {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      border: 2px solid #b8860b;
+    }
+
+    #pix input {
+      font-size: 15px;
+      text-align: center;
+      padding: 8px;
+      width: 80%;
+      border: 1px solid #b8860b;
+      border-radius: 5px;
+      background-color: #fffdf4;
+      color: #333;
+    }
+
+    /* ===== RODAPÉ ===== */
+    footer {
+      padding: 20px;
+      color: #004d40;
+      font-weight: 600;
+      background-color: rgba(255,255,255,0.8);
+      border-top: 1px solid #e0c068;
+      backdrop-filter: blur(3px);
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media screen and (max-width: 600px) {
+      h1 { font-size: 12vw; }
+      h2 { font-size: 5vw; }
+      h3 { font-size: 4vw; }
+      .fotos img { max-height: 150px; }
+      header img { width: 180px; max-width: 180px; }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="src/assets/Brasao.png" alt="Brasão da Turma" />
+    <h1>Livro de Ouro</h1>
+    <h2>Turma Matheus Rodrigues Lopes</h2>
+    <h3>Medicina Turma VI — UNIVASF</h3>
+    <p>
+      Este é o nosso <strong>Livro de Ouro digital</strong>! <br />
+      Sua participação fará toda diferença para celebrarmos juntos esse momento
+      tão especial. Agradecemos por todos os ensinamentos — todos vocês foram
+      essenciais em nossa formação! 💚
+    </p>
+  </header>
+
+  <section class="galeria">
+    <h2>Nossas Memórias</h2>
+    <div class="fotos">
+      <img src="src/assets/A1.jpg" alt="Foto 1" />
+      <img src="src/assets/A2.jpg" alt="Foto 2" />
+      <img src="src/assets/A3.jpg" alt="Foto 3" />
+    </div>
+  </section>
+
+  <section id="pix">
+    <h2>Contribua com o Baile via PIX</h2>
+    <div style="margin:20px 0;">
+      <img src="assets/qrcode-pix.jpg" alt="QR Code PIX" />
+    </div>
+    <p>Copia e cole este código no seu app de banco:</p>
+    <input
+      type="text"
+      value="00020101021126360014br.gov.bcb.pix0114+55819836668485204000053039865802BR5923BRUNO ROCHA SOUZA SILVA6009SAO PAULO622905251K9WCRW5QCZYNM679EAG8MXQZ6304C390"
+      readonly
+    />
+    <p style="font-size:14px; color:#555; margin-top:10px;">
+      Qualquer contribuição é bem-vinda! 🎉
+    </p>
+  </section>
+
+  <footer>Com carinho, Turma 6 de Medicina — UNIVASF 💚</footer>
+</body>
+</html>
