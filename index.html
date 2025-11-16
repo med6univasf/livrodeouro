@@ -1,110 +1,361 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Livro de Ouro — Medicina Turma VI UNIVASF</title>
 
   <!-- Fontes -->
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    body { margin: 0; font-family: "Poppins", sans-serif; color: #004d40; text-align: center; background: linear-gradient(180deg, #fffdf5 0%, #fff8e1 100%), url("https://www.transparenttextures.com/patterns/paper-fibers.png"); background-blend-mode: multiply; }
-    header { padding: 40px 10px; }
-    header img { width: 300px; max-width: 90%; height: auto; margin-bottom: 20px; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.2)); transition: transform 0.3s ease; }
-    header img:hover { transform: scale(1.05); }
-    h1 { font-family: "Alex Brush", cursive; font-size: 5.8em; margin: 10px 0; background: linear-gradient(90deg, #d4af37, #b8860b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 1px 1px 2px rgba(0,0,0,0.15); }
-    h2 { font-family: "Playfair Display", serif; font-size: 1.6em; color: #004d40; margin-bottom: 5px; }
-    h3 { font-family: "Playfair Display", serif; font-size: 1.2em; color: #00796b; margin-bottom: 15px; }
-    p { font-size: 1em; line-height: 1.5; color: #333; max-width: 700px; margin: 0 auto 25px auto; }
-
-    .galeria { background-color: rgba(255,255,255,0.7); padding: 25px 10px; border-top: 2px solid #e0c068; border-bottom: 2px solid #e0c068; backdrop-filter: blur(3px); }
-    .galeria h2 { color: #b8860b; margin-bottom: 15px; }
-    .fotos { display: flex; overflow-x: auto; gap: 15px; justify-content: center; padding: 10px; }
-    .fotos img { height: auto; max-height: 200px; width: auto; max-width: 70%; border-radius: 12px; flex-shrink: 0; box-shadow: 0 3px 8px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
-    .fotos img:hover { transform: scale(1.05); }
-
-    #pix { text-align: center; margin: 40px auto; max-width: 550px; background: rgba(255,248,225,0.9); padding: 25px; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.15); backdrop-filter: blur(3px); }
-    #pix h2 { color: #b8860b; margin-bottom: 15px; }
-    #pix img { width: 200px; height: 200px; border: 2px solid #b8860b; }
-    #pix input { font-size: 15px; text-align: center; padding: 8px; width: 80%; border: 1px solid #b8860b; border-radius: 5px; background-color: #fffdf4; color: #333; }
-
-    footer { padding: 20px; color: #004d40; font-weight: 600; background-color: rgba(255,255,255,0.8); border-top: 1px solid #e0c068; backdrop-filter: blur(3px); }
-
-    @media screen and (max-width: 600px) {
-      h1 { font-size: 12vw; }
-      h2 { font-size: 5vw; }
-      h3 { font-size: 4vw; }
-      .fotos img { max-height: 150px; }
-      header img { width: 220px; max-width: 220px; }
+    /* basic */
+    :root{
+      --verde:#004d40;
+      --dourado:#b8860b;
+      --dourado-esc:#d4af37;
+      --bg:#fff8e1;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Poppins",sans-serif;
+      background: linear-gradient(180deg,#fffdf5 0%,#fff8e1 100%), url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+      background-blend-mode:multiply;
+      color:var(--verde);
+      text-align:center;
+      -webkit-font-smoothing:antialiased;
     }
 
-    /* ===== NUVEM DE DOADORES ===== */
-    #nuvem { margin: 50px auto; padding: 40px; max-width: 950px; height: 380px; position: relative; background: rgba(255,248,225,0.8); border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.15); border: 1px solid #d4af37; overflow: hidden; }
-    #nuvem h2 { font-family: "Playfair Display", serif; color: #b8860b; margin-bottom: 15px; }
-    #wordcloud { position: relative; width: 100%; height: 100%; }
-    .nome-doador { position: absolute; white-space: nowrap; color: #b8860b; font-weight: 600; animation: flutuar 6s ease-in-out infinite; }
-    @keyframes flutuar { 0% { transform: translateY(0); opacity: 0.85; } 50% { transform: translateY(-10px); opacity: 1; } 100% { transform: translateY(0); opacity: 0.85; } }
+    header{padding:36px 16px 8px}
+    .brasao{width:240px;max-width:40vw;display:block;margin:0 auto 10px;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.12))}
+    h1{font-family:'Alex Brush',cursive;font-size:clamp(2.6rem,6.5vw,4.8rem);margin:2px 0;background:linear-gradient(90deg,var(--dourado-esc),var(--dourado));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    h2,h3{margin:6px 0;font-family:'Playfair Display',serif}
+    p.lead{max-width:820px;margin:8px auto 0;color:#333}
+
+    /* gallery */
+    .galeria{background:rgba(255,255,255,0.75);border-top:2px solid #efe3b1;border-bottom:2px solid #efe3b1;padding:18px;margin:14px auto}
+    .fotos{display:flex;gap:12px;overflow-x:auto;justify-content:center;padding:8px}
+    .fotos img{max-height:180px;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,0.12);flex-shrink:0;transition:transform .25s}
+    .fotos img:hover{transform:scale(1.04)}
+
+    /* pix */
+    #pix{max-width:720px;margin:18px auto;background:rgba(255,248,225,0.92);padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06)}
+    #pix img{width:200px;height:200px;object-fit:cover;border-radius:8px;border:2px solid var(--dourado)}
+    .copy{margin-top:12px;font-weight:700;color:#333;background:#fffdf4;padding:8px 10px;border-radius:6px;display:inline-block;border:1px solid rgba(212,175,55,0.12)}
+
+    /* nuvem */
+    #nuvem{max-width:980px;margin:24px auto;background:rgba(255,248,225,0.88);border-radius:12px;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,0.08);border:1px solid rgba(212,175,55,0.12)}
+    #nuvem .titulo{color:var(--dourado);font-family:'Playfair Display',serif;margin-bottom:8px;font-size:1.1rem}
+    #wordcloud{position:relative;width:100%;height:420px;overflow:hidden}
+
+    .tag{
+      position:absolute;
+      white-space:nowrap;
+      font-weight:700;
+      color:var(--dourado-esc);
+      text-shadow:0 2px 6px rgba(0,0,0,0.12);
+      transition:transform .25s ease,opacity .25s ease;
+      cursor:default; user-select:none;
+    }
+    .tag:hover{transform:scale(1.18);z-index:999}
+
+    footer{margin-top:24px;padding:18px;color:var(--verde);font-weight:600;text-align:center;background:transparent}
+
+    /* responsive */
+    @media (max-width:720px){
+      #wordcloud{height:340px}
+      .brasao{width:160px}
+    }
+    @media (max-width:420px){
+      #wordcloud{height:260px}
+    }
+
+    /* tiny loader */
+    #wc-msg{color:#666;margin-top:8px}
   </style>
 </head>
 <body>
   <header>
-    <img src="src/assets/Brasao.png" alt="Brasão da Turma" />
+    <img class="brasao" src="src/assets/Brasao.png" alt="Brasão da Turma">
     <h1>Livro de Ouro</h1>
     <h2>Turma Matheus Rodrigues Lopes</h2>
     <h3>Medicina Turma VI — UNIVASF</h3>
-    <p>Este é o nosso <strong>Livro de Ouro digital</strong>!<br>Sua participação fará toda diferença para celebrarmos juntos esse momento tão especial.</p>
+    <p class="lead">Livro de Ouro digital — contribua para o baile. Obrigado pelo apoio!</p>
   </header>
 
   <section class="galeria">
-    <h2>Nossas Memórias</h2>
+    <h2 style="color:#b8860b">Nossas Memórias</h2>
     <div class="fotos">
-      <img src="src/assets/A1.jpg" alt="Foto 1" />
-      <img src="src/assets/A2.jpg" alt="Foto 2" />
-      <img src="src/assets/A3.jpg" alt="Foto 3" />
+      <img src="src/assets/A1.jpg" alt="Foto 1">
+      <img src="src/assets/A2.jpg" alt="Foto 2">
+      <img src="src/assets/A3.jpg" alt="Foto 3">
     </div>
   </section>
 
   <section id="pix">
-    <h2>Contribua com o Baile via PIX</h2>
-    <div style="margin:20px 0;">
-      <img src="src/assets/qrcode-pix.jpg" alt="QR Code PIX" />
-    </div>
-    <p>Copia e cole este código no seu app de banco:</p>
-    <input type="text" value="00020101021126360014br.gov.bcb.pix0114+55819836668485204000053039865802BR5923BRUNO ROCHA SOUZA SILVA6009SAO PAULO622905251K9WCRW5QCZYNM679EAG8MXQZ6304C390" readonly>
+    <h2 style="color:#b8860b">Contribua com o Baile via PIX</h2>
+    <img src="src/assets/qrcode-pix.jpg" alt="QR Code PIX">
+    <div class="copy">Copia e cola: <br><strong>00020101021126360014br.gov.bcb.pix0114+55819836668485204000053039865802BR5923BRUNO ROCHA SOUZA SILVA...</strong></div>
   </section>
 
-  <section id="nuvem">
-    <h2>Doadores</h2>
-    <div id="wordcloud"></div>
-  </section>
-
-  <!-- ===== NUVEM DE DOADORES ===== -->
-  <section id="nuvem-doadores">
-    <h2 style="color:#b8860b; margin-bottom:25px; font-family:'Playfair Display', serif;">Nossos Apoiadores</h2>
-    <div id="tagCloud" style="position:relative; width:100%; height:420px; margin:auto; overflow:hidden;"></div>
+  <section id="nuvem" aria-label="Nuvem de doadores">
+    <div class="titulo">Nossos Apoiadores</div>
+    <div id="wordcloud" role="img" aria-label="Nuvem de nomes dos doadores"></div>
+    <div id="wc-msg">Carregando doadores...</div>
   </section>
 
   <footer>Com carinho, Turma 6 de Medicina — UNIVASF 💚</footer>
 
+  <!-- SCRIPT: carregar CSV / fallback para HTML / desenhar nuvem -->
   <script>
-    async function carregarDoadores() {
-      const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS07GYioWKYwAOFq2hc30euYOE5pqe4Ca3tCz1KscRnOH9t4AX2JbXBV3_hanDsb1nI7O-NrRQ8GOi_/pub?output=csv";
-      const resp = await fetch(url);
-      const texto = await resp.text();
-      const linhas = texto.split("\n").slice(1);
+  (function(){
+    const csvUrlBase = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS07GYioWKYwAOFq2hc30euYOE5pqe4Ca3tCz1KscRnOH9t4AX2JbXBV3_hanDsb1nI7O-NrRQ8GOi_";
+    const csvUrl = csvUrlBase + "/pub?output=csv";
+    const pubhtmlUrl = csvUrlBase + "/pubhtml";
 
-      const doadores = linhas.map(l => {
-        const partes = l.split(",");
-        return { nome: partes[0], valor: Number(partes[1]) };
-      }).filter(d => d.nome);
+    const wcMsg = document.getElementById('wc-msg');
+    const cloud = document.getElementById('wordcloud');
 
-      gerarNuvem(doadores);
+    // CSV parser que entende aspas
+    function parseCSV(text){
+      const rows = [];
+      let cur=[], field='', inQuotes=false;
+      for(let i=0;i<text.length;i++){
+        const ch = text[i], nxt = text[i+1];
+        if(inQuotes){
+          if(ch === '"' && nxt === '"'){ field += '"'; i++; continue; }
+          if(ch === '"'){ inQuotes=false; continue; }
+          field += ch;
+        } else {
+          if(ch === '"'){ inQuotes=true; continue; }
+          if(ch === ','){ cur.push(field); field=''; continue; }
+          if(ch === '\r') continue;
+          if(ch === '\n'){ cur.push(field); rows.push(cur); cur=[]; field=''; continue; }
+          field += ch;
+        }
+      }
+      if(field !== '' || cur.length) { cur.push(field); rows.push(cur); }
+      return rows;
     }
 
-    function gerarNuvem(doadores) {
-      const container = document.getElementById("wordcloud");
-      container.innerHTML = "";
+    // fallback: parse HTML page with table
+    function parsePubHtml(htmlText){
+      const doc = new DOMParser().parseFromString(htmlText, 'text/html');
+      const table = doc.querySelector('table.wikitable, table'); // google uses table
+      if(!table) return [];
+      const rows = [];
+      table.querySelectorAll('tr').forEach(tr=>{
+        const cells = Array.from(tr.querySelectorAll('th,td')).map(td=>td.textContent.trim());
+        rows.push(cells);
+      });
+      return rows;
+    }
 
-      const largura = container.offsetWidth;
-      const altura = container.offset
+    // normalize header names and find indices
+    function detectIndices(headerRow){
+      const header = headerRow.map(h => (h||'').toString().toLowerCase().trim());
+      const nomeIdx = header.findIndex(h => /nome|name|doador|doadores|contribu/i.test(h));
+      const valorIdx = header.findIndex(h => /valor|value|amount|quantia|montante|contribuição|contribuicao/i.test(h));
+      return { nomeIdx: nomeIdx >=0 ? nomeIdx : 0, valorIdx: valorIdx >=0 ? valorIdx : 1 };
+    }
+
+    // try fetch CSV first; if fails or looks like HTML, try pubhtml
+    async function fetchSheet(){
+      try {
+        console.log('Tentando CSV:', csvUrl);
+        const r = await fetch(csvUrl);
+        if(!r.ok) throw new Error('CSV fetch failed: '+r.status);
+        const text = await r.text();
+        // quick detect: if returned content contains HTML <table or <!doctype, treat as HTML
+        if(/<html|<table/i.test(text) && text.length < 500000){
+          console.warn('CSV response looks like HTML — fallback to pubhtml parsing');
+          // try pubhtml
+          const r2 = await fetch(pubhtmlUrl);
+          if(!r2.ok) throw new Error('pubhtml fetch failed: '+r2.status);
+          const html = await r2.text();
+          const rows = parsePubHtml(html);
+          return rows;
+        }
+        // otherwise parse CSV
+        const rows = parseCSV(text);
+        return rows;
+      } catch(err){
+        console.warn('CSV fetch failed, trying pubhtml:', err);
+        try {
+          const r = await fetch(pubhtmlUrl);
+          if(!r.ok) throw new Error('pubhtml fetch failed: '+r.status);
+          const html = await r.text();
+          const rows = parsePubHtml(html);
+          return rows;
+        } catch(err2){
+          console.error('Both CSV and pubhtml fetch failed:', err2);
+          throw err2;
+        }
+      }
+    }
+
+    // sanitize numeric value strings to float
+    function parseMoney(s){
+      if(!s) return 0;
+      let t = s.toString().trim();
+      // remove currency symbols and spaces
+      t = t.replace(/\s/g,'').replace(/R\$|BRL|USD|€/gi,'');
+      // if uses coma decimal with dots as thousands: 1.234,56 -> remove dots, replace comma
+      if(/,\d{1,2}$/.test(t) && /\./.test(t)){
+        t = t.replace(/\./g,'').replace(',', '.');
+      } else {
+        // replace comma by dot if only comma present
+        if(t.indexOf(',') !== -1 && t.indexOf('.') === -1) t = t.replace(',', '.');
+        // remove any non numeric except dot and minus
+      }
+      t = t.replace(/[^\d\.\-]/g,'');
+      const f = parseFloat(t);
+      return isNaN(f)?0:f;
+    }
+
+    // main flow
+    (async function main(){
+      try {
+        const rows = await fetchSheet();
+        console.log('Rows loaded:', rows.length);
+        if(!rows || rows.length < 2){
+          wcMsg.textContent = 'Nenhum doador encontrado na planilha.';
+          return;
+        }
+
+        // trim empty end rows
+        const cleaned = rows.filter(r => r.some(c => (c||'').toString().trim() !== ''));
+
+        if(cleaned.length < 2){
+          wcMsg.textContent = 'Nenhum doador válido encontrado.';
+          return;
+        }
+
+        const header = cleaned[0].map(h => (h||'').toString().trim());
+        const { nomeIdx, valorIdx } = detectIndices(header);
+        console.log('detected indices', {nomeIdx, valorIdx, header});
+
+        const donors = [];
+        for(let i=1;i<cleaned.length;i++){
+          const row = cleaned[i];
+          const nome = (row[nomeIdx] || '').toString().trim();
+          const rawVal = (row[valorIdx] || '').toString().trim();
+          const valor = parseMoney(rawVal);
+          if(nome){
+            donors.push({ nome, valor });
+          }
+        }
+
+        if(donors.length === 0){
+          wcMsg.textContent = 'Nenhum doador válido encontrado.';
+          return;
+        }
+
+        wcMsg.textContent = ''; // remove mensagem
+        drawCloud(donors);
+      } catch(err){
+        console.error(err);
+        wcMsg.textContent = 'Erro ao carregar doadores. Veja console para detalhes.';
+      }
+    })();
+
+    /* draw cloud with naive collision avoidance */
+    function drawCloud(donors){
+      const container = document.getElementById('wordcloud');
+      container.innerHTML = '';
+      const W = container.clientWidth;
+      const H = container.clientHeight;
+
+      const vals = donors.map(d => d.valor || 0);
+      const min = Math.min(...vals);
+      const max = Math.max(...vals);
+
+      const placed = [];
+
+      function collides(r){
+        for(const p of placed){
+          if(!(r.x + r.w < p.x || p.x + p.w < r.x || r.y + r.h < p.y || p.y + p.h < r.y)){
+            return true;
+          }
+        }
+        return false;
+      }
+
+      const shuffled = donors.slice().sort(()=>Math.random()-0.5);
+
+      shuffled.forEach(d=>{
+        // font size scaling
+        let size;
+        if(max === min){
+          size = 14 + (d.valor>0?20:0);
+        } else {
+          const t = (d.valor - min) / (max - min);
+          size = Math.round(12 + t * 44); // 12..56 px
+        }
+
+        const el = document.createElement('div');
+        el.className = 'tag';
+        el.textContent = d.nome;
+        el.style.fontSize = size + 'px';
+        el.style.lineHeight = '1';
+
+        // append offscreen for measure
+        el.style.left = '-9999px';
+        el.style.top = '-9999px';
+        container.appendChild(el);
+
+        const rect = el.getBoundingClientRect();
+        const elw = Math.ceil(rect.width);
+        const elh = Math.ceil(rect.height);
+
+        let placedRect = null;
+        let attempts = 0;
+        while(attempts < 160){
+          const x = Math.floor(Math.random() * Math.max(1, W - elw));
+          const y = Math.floor(Math.random() * Math.max(1, H - elh));
+          const r = { x, y, w: elw + 6, h: elh + 6 };
+          if(!collides(r)){
+            placedRect = r;
+            break;
+          }
+          attempts++;
+        }
+
+        if(!placedRect){
+          // last-resort: place anyway (centerish)
+          const x = Math.floor(Math.max(0, (W - elw) * Math.random()));
+          const y = Math.floor(Math.max(0, (H - elh) * Math.random()));
+          placedRect = { x, y, w: elw + 6, h: elh + 6 };
+        }
+
+        el.style.left = placedRect.x + 'px';
+        el.style.top = placedRect.y + 'px';
+        el.style.opacity = '0.95';
+
+        // small floating animation with random duration/delay
+        const dur = 5 + Math.random()*6;
+        const delay = Math.random()*2;
+        el.style.animation = `floaty ${dur}s ease-in-out ${delay}s infinite`;
+        placed.push(placedRect);
+      });
+
+      // create keyframes only once
+      if(!document.getElementById('floaty-kf')){
+        const style = document.createElement('style');
+        style.id = 'floaty-kf';
+        style.textContent = `
+          @keyframes floaty {
+            0% { transform: translateY(0); opacity:0.9 }
+            50% { transform: translateY(-8px); opacity:1 }
+            100% { transform: translateY(0); opacity:0.9 }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+    }
+
+  })();
+  </script>
+</body>
+</html>
