@@ -492,24 +492,10 @@ function enviarRecado(){
         el.style.opacity = '0.95';
 
         // small floating animation with random duration/delay
-        const dur = 5 + Math.random()*6;
-        const delay = Math.random()*2;
-        el.style.animation = `floaty ${dur}s ease-in-out ${delay}s infinite`;
+       el.style.animation = "none";
         placed.push(placedRect);
       });
 
-      // create keyframes only once
-      if(!document.getElementById('floaty-kf')){
-        const style = document.createElement('style');
-        style.id = 'floaty-kf';
-        style.textContent = `
-          @keyframes floaty {
-            0% { transform: translateY(0); opacity:0.9 }
-            50% { transform: translateY(-8px); opacity:1 }
-            100% { transform: translateY(0); opacity:0.9 }
-          }
-        `;
-        document.head.appendChild(style);
       }
     }
 
