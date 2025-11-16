@@ -75,12 +75,19 @@
 
     /* tiny loader */
     #wc-msg{color:#666;margin-top:8px}
-    /* Correção para nomes sobrepostos no celular */
+    
+    /* Correção REAL para nomes sobrepostos */
 .tag {
-  white-space: normal !important;
-  line-height: 1.25 !important;
-  max-width: 90vw;
-  word-break: break-word;
+  white-space: nowrap;       /* 🔥 não deixa quebrar linha */
+  max-width: none;           /* 🔥 deixa largura natural */
+  overflow: visible;
+}
+
+/* Celular: diminuir tamanho se ficar grande demais */
+@media (max-width: 480px){
+  .tag {
+    font-size: clamp(10px, 4vw, 22px) !important; /* 🔥 reduz suavemente */
+  }
 }
 
     /* responsive */
