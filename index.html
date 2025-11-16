@@ -28,7 +28,14 @@
     }
 
     header{padding:36px 16px 8px}
-    .brasao{width:240px;max-width:40vw;display:block;margin:0 auto 10px;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.12))}
+.brasao{
+      width:480px;     /* 🔥 2x maior */
+      max-width:60vw;  /* 🔥 permite que cresça mais no celular */
+      display:block;
+      margin:0 auto 10px;
+      filter:drop-shadow(0 6px 18px rgba(0,0,0,0.12));
+}
+
     h1{font-family:'Alex Brush',cursive;font-size:clamp(2.6rem,6.5vw,4.8rem);margin:2px 0;background:linear-gradient(90deg,var(--dourado-esc),var(--dourado));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     h2,h3{margin:6px 0;font-family:'Playfair Display',serif}
     p.lead{max-width:820px;margin:8px auto 0;color:#333}
