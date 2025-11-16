@@ -127,7 +127,7 @@
     #pix img {
       width: 200px;
       height: 200px;
-      border-radius: 0; /* sem círculo */
+      border-radius: 0;
       border: 2px solid #b8860b;
     }
 
@@ -142,6 +142,34 @@
       color: #333;
     }
 
+    /* ===== LISTA DE DOADORES ===== */
+    #doadores {
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 25px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      border: 2px solid #e0c068;
+      backdrop-filter: blur(3px);
+    }
+
+    #doadores table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    #doadores th, #doadores td {
+      border: 1px solid #d9c27d;
+      padding: 10px;
+    }
+
+    #doadores th {
+      background: #fff3cd;
+      color: #8d6a00;
+      font-weight: 700;
+    }
+
     /* ===== RODAPÉ ===== */
     footer {
       padding: 20px;
@@ -150,15 +178,6 @@
       background-color: rgba(255,255,255,0.8);
       border-top: 1px solid #e0c068;
       backdrop-filter: blur(3px);
-    }
-
-    /* ===== RESPONSIVO ===== */
-    @media screen and (max-width: 600px) {
-      h1 { font-size: 12vw; }
-      h2 { font-size: 5vw; }
-      h3 { font-size: 4vw; }
-      .fotos img { max-height: 150px; }
-      header img { width: 220px; max-width: 220px; }
     }
   </style>
 </head>
@@ -172,8 +191,7 @@
     <p>
       Este é o nosso <strong>Livro de Ouro digital</strong>! <br>
       Sua participação fará toda diferença para celebrarmos juntos esse momento
-      tão especial. Agradecemos por todos os ensinamentos — todos vocês foram
-      essenciais em nossa formação! 💚
+      tão especial. 💚
     </p>
   </header>
 
@@ -191,11 +209,44 @@
     <div style="margin:20px 0;">
       <img src="src/assets/qrcode-pix.jpg" alt="QR Code PIX" />
     </div>
-    <p>Copia e cole este código no seu app de banco:</p>
+    <p>Copia e cole este código:</p>
     <input type="text" value="00020101021126360014br.gov.bcb.pix0114+55819836668485204000053039865802BR5923BRUNO ROCHA SOUZA SILVA6009SAO PAULO622905251K9WCRW5QCZYNM679EAG8MXQZ6304C390" readonly>
-    <p style="font-size:14px; color:#555; margin-top:10px;">Qualquer contribuição é bem-vinda! 🎉</p>
+  </section>
+
+  <!-- LISTA DE DOADORES -->
+  <section id="doadores">
+    <h2>Lista de Doadores</h2>
+    <p style="color:#555;">Carregando informações...</p>
+    <div id="lista-doadores"></div>
   </section>
 
   <footer>Com carinho, Turma 6 de Medicina — UNIVASF 💚</footer>
+
+  <!-- SCRIPT PARA LER A PLANILHA -->
+  <script>
+    fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vS07GYioWKYwAOFq2hc30euYOE5pqe4Ca3tCz1KscRnOH9t4AX2JbXBV3_hanDsb1nI7O-NrRQ8GOi_/pub?output=csv")
+      .then(response => response.text())
+      .then(data => {
+        const linhas = data.split("\n").map(l => l.split(","));
+        let tabela = "<table><tr><th>Data</th><th>Nome</th><th>Valor</th></tr>";
+
+        for (let i = 1; i < linhas.length; i++) {
+          tabela += `
+            <tr>
+              <td>${linhas[i][0] || ""}</td>
+              <td>${linhas[i][1] || ""}</td>
+              <td>${linhas[i][2] || ""}</td>
+            </tr>`;
+        }
+
+        tabela += "</table>";
+        document.getElementById("lista-doadores").innerHTML = tabela;
+      })
+      .catch(() => {
+        document.getElementById("lista-doadores").innerHTML =
+          "<p style='color:red;'>Não foi possível carregar os dados.</p>";
+      });
+  </script>
+
 </body>
 </html>
