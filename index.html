@@ -3,96 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Livro de Ouro - Med6 UNIVASF</title>
+  <title>Livro de Ouro — Medicina Turma VI UNIVASF</title>
 
-  <!-- Fonte Alex Brush + Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #fafafa url('fundo-textura.png') repeat; /* textura sutil */
-      color: #333;
-      text-align: center;
+    body { margin: 0; font-family: "Poppins", sans-serif; color: #004d40; text-align: center; background: linear-gradient(180deg, #fffdf5 0%, #fff8e1 100%), url("https://www.transparenttextures.com/patterns/paper-fibers.png"); background-blend-mode: multiply; }
+    header { padding: 40px 10px; }
+    header img { width: 300px; max-width: 90%; height: auto; margin-bottom: 20px; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.2)); transition: transform 0.3s ease; }
+    header img:hover { transform: scale(1.05); }
+    h1 { font-family: "Alex Brush", cursive; font-size: 5.8em; margin: 10px 0; background: linear-gradient(90deg, #d4af37, #b8860b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 1px 1px 2px rgba(0,0,0,0.15); }
+    h2 { font-family: "Playfair Display", serif; font-size: 1.6em; color: #004d40; margin-bottom: 5px; }
+    h3 { font-family: "Playfair Display", serif; font-size: 1.2em; color: #00796b; margin-bottom: 15px; }
+    p { font-size: 1em; line-height: 1.5; color: #333; max-width: 700px; margin: 0 auto 25px auto; }
+
+    .galeria { background-color: rgba(255,255,255,0.7); padding: 25px 10px; border-top: 2px solid #e0c068; border-bottom: 2px solid #e0c068; backdrop-filter: blur(3px); }
+    .galeria h2 { color: #b8860b; margin-bottom: 15px; }
+    .fotos { display: flex; overflow-x: auto; gap: 15px; justify-content: center; padding: 10px; }
+    .fotos img { height: auto; max-height: 200px; width: auto; max-width: 70%; border-radius: 12px; flex-shrink: 0; box-shadow: 0 3px 8px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
+    .fotos img:hover { transform: scale(1.05); }
+
+    #pix { text-align: center; margin: 40px auto; max-width: 550px; background: rgba(255,248,225,0.9); padding: 25px; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.15); backdrop-filter: blur(3px); }
+    #pix h2 { color: #b8860b; margin-bottom: 15px; }
+    #pix img { width: 200px; height: 200px; border: 2px solid #b8860b; }
+    #pix input { font-size: 15px; text-align: center; padding: 8px; width: 80%; border: 1px solid #b8860b; border-radius: 5px; background-color: #fffdf4; color: #333; }
+
+    footer { padding: 20px; color: #004d40; font-weight: 600; background-color: rgba(255,255,255,0.8); border-top: 1px solid #e0c068; backdrop-filter: blur(3px); }
+
+    @media screen and (max-width: 600px) {
+      h1 { font-size: 12vw; }
+      h2 { font-size: 5vw; }
+      h3 { font-size: 4vw; }
+      .fotos img { max-height: 150px; }
+      header img { width: 220px; max-width: 220px; }
     }
 
-    header {
-      padding: 40px 20px;
-    }
-
-    #brasao {
-      width: 180px; /* aumentado 50% */
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      font-family: 'Alex Brush', cursive;
-      font-size: 4.2rem; /* aumentado 20% */
-      color: #d4af37; /* dourado elegante */
-      margin-top: 10px;
-    }
-
-    h2 {
-      color: #004d40;
-      margin-top: 30px;
-      font-weight: 600;
-    }
-
-    /* QR CODE */
-    #qr {
-      width: 230px;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
-    }
-
-    /* Container da nuvem */
-    #wordcloud {
-      position: relative;
-      width: 100%;
-      max-width: 900px;
-      height: 500px;
-      margin: 0 auto;
-      margin-top: 30px;
-    }
-
-    .nome-doador {
-      position: absolute;
-      font-weight: 600;
-      color: #004d40;
-      white-space: nowrap;
-      transition: transform 0.3s ease;
-    }
-
-    .nome-doador:hover {
-      transform: scale(1.2);
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      background: #004d40;
-      color: gold;
-    }
+    /* ===== NUVEM DE DOADORES ===== */
+    #nuvem { margin: 50px auto; padding: 40px; max-width: 950px; height: 380px; position: relative; background: rgba(255,248,225,0.8); border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.15); border: 1px solid #d4af37; overflow: hidden; }
+    #nuvem h2 { font-family: "Playfair Display", serif; color: #b8860b; margin-bottom: 15px; }
+    #wordcloud { position: relative; width: 100%; height: 100%; }
+    .nome-doador { position: absolute; white-space: nowrap; color: #b8860b; font-weight: 600; animation: flutuar 6s ease-in-out infinite; }
+    @keyframes flutuar { 0% { transform: translateY(0); opacity: 0.85; } 50% { transform: translateY(-10px); opacity: 1; } 100% { transform: translateY(0); opacity: 0.85; } }
   </style>
 </head>
-
 <body>
-
   <header>
-    <img id="brasao" src="brasao.png" alt="Brasão">
+    <img src="src/assets/Brasao.png" alt="Brasão da Turma" />
     <h1>Livro de Ouro</h1>
+    <h2>Turma Matheus Rodrigues Lopes</h2>
+    <h3>Medicina Turma VI — UNIVASF</h3>
+    <p>Este é o nosso <strong>Livro de Ouro digital</strong>!<br>Sua participação fará toda diferença para celebrarmos juntos esse momento tão especial.</p>
   </header>
 
-  <section id="pix">
-    <h2>Contribua com o Baile</h2>
-    <img id="qr" src="qrcode.png" alt="QR Code PIX">
+  <section class="galeria">
+    <h2>Nossas Memórias</h2>
+    <div class="fotos">
+      <img src="src/assets/A1.jpg" alt="Foto 1" />
+      <img src="src/assets/A2.jpg" alt="Foto 2" />
+      <img src="src/assets/A3.jpg" alt="Foto 3" />
+    </div>
+  </section>
 
-    <p><strong>Copia e Cola:</strong></p>
-    <p style="font-size: 1.1rem; font-weight: 600;">
-      SUA_CHAVE_PIX_AQUI
-    </p>
+  <section id="pix">
+    <h2>Contribua com o Baile via PIX</h2>
+    <div style="margin:20px 0;">
+      <img src="src/assets/qrcode-pix.jpg" alt="QR Code PIX" />
+    </div>
+    <p>Copia e cole este código no seu app de banco:</p>
+    <input type="text" value="00020101021126360014br.gov.bcb.pix0114+55819836668485204000053039865802BR5923BRUNO ROCHA SOUZA SILVA6009SAO PAULO622905251K9WCRW5QCZYNM679EAG8MXQZ6304C390" readonly>
   </section>
 
   <section id="nuvem">
@@ -100,22 +79,24 @@
     <div id="wordcloud"></div>
   </section>
 
-  <footer>
-    Med6 UNIVASF — Agradecemos sua contribuição 💛
-  </footer>
+  <!-- ===== NUVEM DE DOADORES ===== -->
+  <section id="nuvem-doadores">
+    <h2 style="color:#b8860b; margin-bottom:25px; font-family:'Playfair Display', serif;">Nossos Apoiadores</h2>
+    <div id="tagCloud" style="position:relative; width:100%; height:420px; margin:auto; overflow:hidden;"></div>
+  </section>
 
-  <!-- SCRIPT DA NUVEM -->
+  <footer>Com carinho, Turma 6 de Medicina — UNIVASF 💚</footer>
+
   <script>
     async function carregarDoadores() {
       const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS07GYioWKYwAOFq2hc30euYOE5pqe4Ca3tCz1KscRnOH9t4AX2JbXBV3_hanDsb1nI7O-NrRQ8GOi_/pub?output=csv";
-      
       const resp = await fetch(url);
       const texto = await resp.text();
-      const linhas = texto.split("\n").slice(1); 
+      const linhas = texto.split("\n").slice(1);
 
       const doadores = linhas.map(l => {
         const partes = l.split(",");
-        return { nome: partes[0].trim(), valor: Number(partes[1]) };
+        return { nome: partes[0], valor: Number(partes[1]) };
       }).filter(d => d.nome);
 
       gerarNuvem(doadores);
@@ -126,29 +107,4 @@
       container.innerHTML = "";
 
       const largura = container.offsetWidth;
-      const altura = container.offsetHeight;
-
-      doadores.forEach(d => {
-        const el = document.createElement("div");
-        el.className = "nome-doador";
-
-        const base = 14;
-        const extra = Math.min(d.valor / 5, 40);
-        el.style.fontSize = (base + extra) + "px";
-        el.textContent = d.nome;
-
-        const x = Math.random() * (largura - 150);
-        const y = Math.random() * (altura - 40);
-
-        el.style.left = x + "px";
-        el.style.top = y + "px";
-
-        container.appendChild(el);
-      });
-    }
-
-    carregarDoadores();
-  </script>
-
-</body>
-</html>
+      const altura = container.offset
