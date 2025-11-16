@@ -52,3 +52,16 @@ h1 {
 /* Subtítulos */
 h2 {
   font-
+/* Brasão padrão (telas grandes) */
+#brasao {
+  width: 260px;  /* ajuste como preferir */
+  max-width: 80%;
+}
+
+/* Para telas pequenas (celular) */
+@media (max-width: 600px) {
+  #brasao {
+    width: 320px;   /* aumenta no celular */
+    max-width: 90%;
+  }
+}
