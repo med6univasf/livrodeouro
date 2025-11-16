@@ -69,17 +69,26 @@
 
     footer{margin-top:24px;padding:18px;color:var(--verde);font-weight:600;text-align:center;background:transparent}
 
-    /* responsive */
-    @media (max-width:720px){
-      #wordcloud{height:340px}
-      .brasao{width:160px}
-    }
     @media (max-width:420px){
       #wordcloud{height:260px}
     }
 
     /* tiny loader */
     #wc-msg{color:#666;margin-top:8px}
+    /* Correção para nomes sobrepostos no celular */
+.tag {
+  white-space: normal !important;
+  line-height: 1.25 !important;
+  max-width: 90vw;
+  word-break: break-word;
+}
+
+    /* responsive */
+    @media (max-width:720px){
+      #wordcloud{height:340px}
+      .brasao{width:160px}
+    }
+    
   </style>
 </head>
 <body>
