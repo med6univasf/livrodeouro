@@ -160,6 +160,109 @@ function copyPix(){
     <div id="wc-msg">Carregando doadores...</div>
   </section>
 
+  <section id="recados" style="
+  max-width: 820px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(255,248,225,0.92);
+  border-radius: 12px;
+  border: 1px solid rgba(212,175,55,0.20);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+">
+  <h2 style="color:#b8860b; font-family:'Playfair Display',serif;">Deixe seu recado para a turma ✨</h2>
+
+  <p style="color:#444; font-size:0.95rem; margin-top:4px;">
+    Escreva uma mensagem especial e deixe sua assinatura — seu carinho ficará registrado em nosso livro de ouro virtual.
+  </p>
+
+  <!-- Campo do nome -->
+  <input id="nome" type="text" placeholder="Seu nome..." style="
+      width:100%;
+      margin-top:12px;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid rgba(0,0,0,0.2);
+      font-size:0.95rem;
+  ">
+
+  <!-- Campo de recado -->
+  <textarea id="msg" placeholder="Escreva sua mensagem..." style="
+      width:100%;
+      height:120px;
+      margin-top:12px;
+      padding:12px;
+      border-radius:8px;
+      border:1px solid rgba(0,0,0,0.2);
+      font-size:0.95rem;
+      resize:none;
+  "></textarea>
+
+  <!-- Botão -->
+  <button onclick="enviarRecado()" style="
+    margin-top:14px;
+    background:#d4af37;
+    color:white;
+    padding:10px 16px;
+    border:none;
+    border-radius:8px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    width:100%;
+  ">Enviar recado</button>
+
+  <!-- Lista de recados -->
+  <div id="lista-recados" style="
+    margin-top:22px;
+    text-align:left;
+  "></div>
+</section>
+
+<script>
+function enviarRecado(){
+  const nome = document.getElementById("nome").value.trim();
+  const msg = document.getElementById("msg").value.trim();
+
+  if(!msg){
+    alert("Digite uma mensagem antes de enviar!");
+    return;
+  }
+
+  const box = document.getElementById("lista-recados");
+
+  // Criar o cartão
+  const rec = document.createElement("div");
+  rec.style = `
+    background:white; 
+    padding:14px; 
+    border-radius:8px; 
+    margin-bottom:12px; 
+    border:1px solid rgba(0,0,0,0.15); 
+    box-shadow:0 4px 10px rgba(0,0,0,0.06);
+  `;
+
+  // Mensagem principal
+  const textoMsg = document.createElement("p");
+  textoMsg.style = "margin:0 0 6px 0; color:#333;";
+  textoMsg.textContent = msg;
+
+  // Assinatura
+  const assinatura = document.createElement("p");
+  assinatura.style = "margin:0; font-size:0.85rem; color:#666; text-align:right;";
+  assinatura.textContent = nome ? `— ${nome}` : "— Anônimo";
+
+  rec.appendChild(textoMsg);
+  rec.appendChild(assinatura);
+
+  // Adiciona no topo
+  box.prepend(rec);
+
+  // Limpa campos
+  document.getElementById("msg").value = "";
+  document.getElementById("nome").value = "";
+}
+</script>
+
   <footer>Com carinho, Turma 6 de Medicina — UNIVASF 💚</footer>
 
   <!-- SCRIPT: carregar CSV / fallback para HTML / desenhar nuvem -->
