@@ -9,190 +9,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ===== ESTILO GERAL ===== */
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      color: #004d40;
-      text-align: center;
-      background: linear-gradient(180deg, #fffdf5 0%, #fff8e1 100%), 
-                  url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-      background-blend-mode: multiply;
+    body { margin: 0; font-family: "Poppins", sans-serif; color: #004d40; text-align: center; background: linear-gradient(180deg, #fffdf5 0%, #fff8e1 100%), url("https://www.transparenttextures.com/patterns/paper-fibers.png"); background-blend-mode: multiply; }
+    header { padding: 40px 10px; }
+    header img { width: 300px; max-width: 90%; height: auto; margin-bottom: 20px; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.2)); transition: transform 0.3s ease; }
+    header img:hover { transform: scale(1.05); }
+    h1 { font-family: "Alex Brush", cursive; font-size: 5.8em; margin: 10px 0; background: linear-gradient(90deg, #d4af37, #b8860b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 1px 1px 2px rgba(0,0,0,0.15); }
+    h2 { font-family: "Playfair Display", serif; font-size: 1.6em; color: #004d40; margin-bottom: 5px; }
+    h3 { font-family: "Playfair Display", serif; font-size: 1.2em; color: #00796b; margin-bottom: 15px; }
+    p { font-size: 1em; line-height: 1.5; color: #333; max-width: 700px; margin: 0 auto 25px auto; }
+
+    .galeria { background-color: rgba(255,255,255,0.7); padding: 25px 10px; border-top: 2px solid #e0c068; border-bottom: 2px solid #e0c068; backdrop-filter: blur(3px); }
+    .galeria h2 { color: #b8860b; margin-bottom: 15px; }
+    .fotos { display: flex; overflow-x: auto; gap: 15px; justify-content: center; padding: 10px; }
+    .fotos img { height: auto; max-height: 200px; width: auto; max-width: 70%; border-radius: 12px; flex-shrink: 0; box-shadow: 0 3px 8px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
+    .fotos img:hover { transform: scale(1.05); }
+
+    #pix { text-align: center; margin: 40px auto; max-width: 550px; background: rgba(255,248,225,0.9); padding: 25px; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.15); backdrop-filter: blur(3px); }
+    #pix h2 { color: #b8860b; margin-bottom: 15px; }
+    #pix img { width: 200px; height: 200px; border: 2px solid #b8860b; }
+    #pix input { font-size: 15px; text-align: center; padding: 8px; width: 80%; border: 1px solid #b8860b; border-radius: 5px; background-color: #fffdf4; color: #333; }
+
+    footer { padding: 20px; color: #004d40; font-weight: 600; background-color: rgba(255,255,255,0.8); border-top: 1px solid #e0c068; backdrop-filter: blur(3px); }
+
+    @media screen and (max-width: 600px) {
+      h1 { font-size: 12vw; }
+      h2 { font-size: 5vw; }
+      h3 { font-size: 4vw; }
+      .fotos img { max-height: 150px; }
+      header img { width: 220px; max-width: 220px; }
     }
 
-    /* ===== HEADER ===== */
-    header {
-      padding: 40px 10px;
-    }
-
-    header img {
-      width: 300px; /* 50% maior */
-      max-width: 90%;
-      height: auto;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 3px 5px rgba(0,0,0,0.2));
-      transition: transform 0.3s ease;
-    }
-
-    header img:hover {
-      transform: scale(1.05);
-    }
-
-    h1 {
-      font-family: "Alex Brush", cursive;
-      font-size: 5.8em; /* 20% maior */
-      margin: 10px 0;
-      background: linear-gradient(90deg, #d4af37, #b8860b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
-    }
-
-    h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 1.6em;
-      color: #004d40;
-      margin-bottom: 5px;
-    }
-
-    h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 1.2em;
-      color: #00796b;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 1em;
-      line-height: 1.5;
-      color: #333;
-      max-width: 700px;
-      margin: 0 auto 25px auto;
-    }
-
-    /* ===== GALERIA ===== */
-    .galeria {
-      background-color: rgba(255,255,255,0.7);
-      padding: 25px 10px;
-      border-top: 2px solid #e0c068;
-      border-bottom: 2px solid #e0c068;
-      backdrop-filter: blur(3px);
-    }
-
-    .galeria h2 {
-      color: #b8860b;
-      margin-bottom: 15px;
-    }
-
-    .fotos {
-      display: flex;
-      overflow-x: auto;
-      gap: 15px;
-      justify-content: center;
-      padding: 10px;
-    }
-
-    .fotos img {
-      height: auto;
-      max-height: 200px;
-      width: auto;
-      max-width: 70%;
-      border-radius: 12px;
-      flex-shrink: 0;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .fotos img:hover {
-      transform: scale(1.05);
-    }
-
-    /* ===== PIX ===== */
-    #pix {
-      text-align: center;
-      margin: 40px auto;
-      max-width: 550px;
-      background: rgba(255,248,225,0.9);
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-      backdrop-filter: blur(3px);
-    }
-
-    #pix h2 {
-      color: #b8860b;
-      margin-bottom: 15px;
-    }
-
-    #pix img {
-      width: 200px;
-      height: 200px;
-      border-radius: 0;
-      border: 2px solid #b8860b;
-    }
-
-    #pix input {
-      font-size: 15px;
-      text-align: center;
-      padding: 8px;
-      width: 80%;
-      border: 1px solid #b8860b;
-      border-radius: 5px;
-      background-color: #fffdf4;
-      color: #333;
-    }
-
-    /* ===== LISTA DE DOADORES ===== */
-    #doadores {
-      margin: 40px auto;
-      max-width: 800px;
-      padding: 25px;
-      background: rgba(255,255,255,0.85);
-      border-radius: 12px;
-      border: 2px solid #e0c068;
-      backdrop-filter: blur(3px);
-    }
-
-    #doadores table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
-
-    #doadores th, #doadores td {
-      border: 1px solid #d9c27d;
-      padding: 10px;
-    }
-
-    #doadores th {
-      background: #fff3cd;
-      color: #8d6a00;
-      font-weight: 700;
-    }
-
-    /* ===== RODAPÉ ===== */
-    footer {
-      padding: 20px;
-      color: #004d40;
-      font-weight: 600;
-      background-color: rgba(255,255,255,0.8);
-      border-top: 1px solid #e0c068;
-      backdrop-filter: blur(3px);
-    }
+    /* ===== NUVEM DE DOADORES ===== */
+    #nuvem { margin: 50px auto; padding: 40px; max-width: 950px; height: 380px; position: relative; background: rgba(255,248,225,0.8); border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.15); border: 1px solid #d4af37; overflow: hidden; }
+    #nuvem h2 { font-family: "Playfair Display", serif; color: #b8860b; margin-bottom: 15px; }
+    #wordcloud { position: relative; width: 100%; height: 100%; }
+    .nome-doador { position: absolute; white-space: nowrap; color: #b8860b; font-weight: 600; animation: flutuar 6s ease-in-out infinite; }
+    @keyframes flutuar { 0% { transform: translateY(0); opacity: 0.85; } 50% { transform: translateY(-10px); opacity: 1; } 100% { transform: translateY(0); opacity: 0.85; } }
   </style>
 </head>
-
 <body>
   <header>
     <img src="src/assets/Brasao.png" alt="Brasão da Turma" />
     <h1>Livro de Ouro</h1>
     <h2>Turma Matheus Rodrigues Lopes</h2>
     <h3>Medicina Turma VI — UNIVASF</h3>
-    <p>
-      Este é o nosso <strong>Livro de Ouro digital</strong>! <br>
-      Sua participação fará toda diferença para celebrarmos juntos esse momento
-      tão especial. 💚
-    </p>
+    <p>Este é o nosso <strong>Livro de Ouro digital</strong>!<br>Sua participação fará toda diferença para celebrarmos juntos esse momento tão especial.</p>
   </header>
 
   <section class="galeria">
@@ -209,44 +70,41 @@
     <div style="margin:20px 0;">
       <img src="src/assets/qrcode-pix.jpg" alt="QR Code PIX" />
     </div>
-    <p>Copia e cole este código:</p>
+    <p>Copia e cole este código no seu app de banco:</p>
     <input type="text" value="00020101021126360014br.gov.bcb.pix0114+55819836668485204000053039865802BR5923BRUNO ROCHA SOUZA SILVA6009SAO PAULO622905251K9WCRW5QCZYNM679EAG8MXQZ6304C390" readonly>
   </section>
 
-  <!-- LISTA DE DOADORES -->
-  <section id="doadores">
-    <h2>Lista de Doadores</h2>
-    <p style="color:#555;">Carregando informações...</p>
-    <div id="lista-doadores"></div>
+  <section id="nuvem">
+    <h2>Doadores</h2>
+    <div id="wordcloud"></div>
+  </section>
+
+  <!-- ===== NUVEM DE DOADORES ===== -->
+  <section id="nuvem-doadores">
+    <h2 style="color:#b8860b; margin-bottom:25px; font-family:'Playfair Display', serif;">Nossos Apoiadores</h2>
+    <div id="tagCloud" style="position:relative; width:100%; height:420px; margin:auto; overflow:hidden;"></div>
   </section>
 
   <footer>Com carinho, Turma 6 de Medicina — UNIVASF 💚</footer>
 
-  <!-- SCRIPT PARA LER A PLANILHA -->
   <script>
-    fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vS07GYioWKYwAOFq2hc30euYOE5pqe4Ca3tCz1KscRnOH9t4AX2JbXBV3_hanDsb1nI7O-NrRQ8GOi_/pub?output=csv")
-      .then(response => response.text())
-      .then(data => {
-        const linhas = data.split("\n").map(l => l.split(","));
-        let tabela = "<table><tr><th>Data</th><th>Nome</th><th>Valor</th></tr>";
+    async function carregarDoadores() {
+      const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS07GYioWKYwAOFq2hc30euYOE5pqe4Ca3tCz1KscRnOH9t4AX2JbXBV3_hanDsb1nI7O-NrRQ8GOi_/pub?output=csv";
+      const resp = await fetch(url);
+      const texto = await resp.text();
+      const linhas = texto.split("\n").slice(1);
 
-        for (let i = 1; i < linhas.length; i++) {
-          tabela += `
-            <tr>
-              <td>${linhas[i][0] || ""}</td>
-              <td>${linhas[i][1] || ""}</td>
-              <td>${linhas[i][2] || ""}</td>
-            </tr>`;
-        }
+      const doadores = linhas.map(l => {
+        const partes = l.split(",");
+        return { nome: partes[0], valor: Number(partes[1]) };
+      }).filter(d => d.nome);
 
-        tabela += "</table>";
-        document.getElementById("lista-doadores").innerHTML = tabela;
-      })
-      .catch(() => {
-        document.getElementById("lista-doadores").innerHTML =
-          "<p style='color:red;'>Não foi possível carregar os dados.</p>";
-      });
-  </script>
+      gerarNuvem(doadores);
+    }
 
-</body>
-</html>
+    function gerarNuvem(doadores) {
+      const container = document.getElementById("wordcloud");
+      container.innerHTML = "";
+
+      const largura = container.offsetWidth;
+      const altura = container.offset
